@@ -1,4 +1,5 @@
 #TrueBeauty
+
 Aplikacja WPF "TrueBeauty" jest projektem końcowym zaliczającym przedmiot MAS - Modelowanie i Analiza Systemów informacyjnych. Celem aplikacji było umożliwienie przeprowadzenia, krótkiego procesu biznesowego polegającego na zapisie klienta na zabieg.
 #Opis przebiegu
 •	Wstęp:
