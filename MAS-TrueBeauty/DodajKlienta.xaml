@@ -1,0 +1,50 @@
+﻿<Window x:Class="MAS_TrueBeauty.DodajKlienta"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MAS_TrueBeauty"
+        mc:Ignorable="d"
+        Title="DodajKlienta" Height="600" Width="550">
+    <Grid Name="dodajKlientaInputsGrid" Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Label FontSize="30" HorizontalContentAlignment="Center" Grid.Row="0">Dodaj klienta</Label>
+        <Label FontSize="20" VerticalAlignment="Center" HorizontalContentAlignment="Left" Grid.Row="1">Klient jest lekarzem:</Label>
+        <CheckBox Name="checkJestLekarzem" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Click="CheckJestLekarzem_Click"></CheckBox>
+        <Label FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0 0 0 0" Grid.Row="2">Lekarz:</Label>
+        <ComboBox Name="lekarzInput" HorizontalAlignment="Right"  Grid.Row="2" VerticalAlignment="Center" Width="300" Margin="0 0 40 0" IsEnabled="False"/>
+        <Label FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0 0 0 0" Grid.Row="3">Imie:</Label>
+        <TextBox Name="imieInput" HorizontalAlignment="Right" Grid.Row="3"  VerticalAlignment="Center" Height="30" Width="300" Margin="0 0 40 0"/>
+        <Label FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0 0 0 0" Grid.Row="4">Nazwisko:</Label>
+        <TextBox Name="nazwiskoInput" HorizontalAlignment="Right" Grid.Row="4"  VerticalAlignment="Center" Height="30" Width="300" Margin="0 0 40 0"/>
+        <Label FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0 0 0 0" Grid.Row="5">Dane kontaktowe:</Label>
+        <TextBox Name="daneKontaktoweInput" HorizontalAlignment="Right" Grid.Row="5"  VerticalAlignment="Center" Height="30" Width="300" Margin="0 0 40 0"/>
+        <Label FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0 0 0 0" Grid.Row="6">Data urodzenia:</Label>
+        <DatePicker Name="dataUrodzeniaInput"  HorizontalAlignment="Right" Grid.Row="6" VerticalAlignment="Center" Width="300" Margin="0 0 40 0"/>
+        <Label FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0 0 0 0" Grid.Row="7">Płeć:</Label>
+        <ComboBox Name="plecInput" HorizontalAlignment="Right"  Grid.Row="7" VerticalAlignment="Center" Width="300" Margin="0 0 40 0">
+            <ComboBoxItem>Kobieta</ComboBoxItem>
+            <ComboBoxItem>Mężczyzna</ComboBoxItem>
+        </ComboBox>
+        <Label FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0 0 0 0" Grid.Row="8">Adres:</Label>
+        <TextBox Name="adresInput" HorizontalAlignment="Right" Grid.Row="8"  VerticalAlignment="Center" Height="30" Width="300" Margin="0 0 40 0"/>
+        <Label FontSize="20" VerticalAlignment="Center" HorizontalContentAlignment="Left" Grid.Row="9">Pierwszy zabieg:</Label>
+        <CheckBox Name="pierwszyZabiegCheck" Grid.Row="9" VerticalAlignment="Center" HorizontalAlignment="Center" IsChecked="True"></CheckBox>
+        <Button Name="AddKlient" Click="AddKlient_Click" Padding="10" HorizontalAlignment="Center" Grid.Row="10" Width="100"  Height="35" VerticalAlignment="Center" FontSize="10" Background="MediumOrchid">Dodaj</Button>
+    </Grid>
+</Window>

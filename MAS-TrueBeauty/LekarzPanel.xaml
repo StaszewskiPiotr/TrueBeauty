@@ -1,0 +1,139 @@
+﻿<Window x:Class="MAS_TrueBeauty.LekarzPanel"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MAS_TrueBeauty"
+        mc:Ignorable="d"
+        Title="LekarzPanel" Height="450" Width="1000">
+    <Grid>
+        <UniformGrid Columns="2" Margin="5,0">
+            <FrameworkElement x:Name="c1"/>
+        </UniformGrid>
+        <TabControl>
+            <TabItem Width="{Binding ElementName=c1, Path=ActualWidth}" Height="40" Header="Klienci oczekujący na wizytę">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="2*"/>
+                        <RowDefinition Height="2*"/>
+                        <RowDefinition Height="0.2*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="0.1*"/>
+                        <ColumnDefinition Width="8*"/>
+                        <ColumnDefinition Width="0.1*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button Name="PrzeprowadzWizyte" Click="PrzeprowadzWizyte_Click" Grid.Column="0" Grid.Row="0" Background="MediumOrchid" Margin="5,5,5,5" FontSize="15">
+                        Przeprowadź wizytę
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="20"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                    <Button Name="UsunKlientaOczekujacego" Click="UsunKlientaOczekujacego_Click" Grid.Column="0" Grid.Row="1" Background="MediumOrchid" Margin="5,5,5,5" FontSize="15">
+                        Usuń
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="20"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                    <DataGrid SelectionUnit="FullRow"  IsReadOnly="True" AutoGenerateColumns="False" Name="KlienciOczekujacyDataGrid" Grid.Row="0" Grid.Column="2" Grid.RowSpan="2">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn x:Name="Id" Width="*" Header="Id klienta" Binding="{Binding OsobaId}"/>
+                            <DataGridTextColumn Width="*" Header="Imie" Binding="{Binding imie}"/>
+                            <DataGridTextColumn Width="*" Header="Nazwisko" Binding="{Binding nazwisko}"/>
+                            <DataGridTextColumn Width="*" Header="Dane kontaktowe"  Binding="{Binding daneKontaktowe}"/>
+                            <DataGridTextColumn Width="*" Header="Data urodzenia" Binding="{Binding dataUrodzenia}"/>
+                            <DataGridTextColumn Width="*" Header="Płeć" Binding="{Binding plec}"/>
+                            <DataGridTextColumn Width="*" Header="Adres" Binding="{Binding adresZamieszkania}"/>
+                            <DataGridTextColumn Width="*" Header="Pierwszy zabieg" Binding="{Binding pierwszaOperacjaPlastyczna}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <Button Name="OdswierzKlientowOczekujacych" Click="OdswierzKlientowOczekujacych_Click"  Grid.Column="2" Grid.Row="3" Height="40" Width="150" VerticalAlignment="Center" HorizontalAlignment="Right" Background="MediumOrchid" Margin="5,5,5,5" FontSize="15">
+                        Odświerz
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="20"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                    <Button Name="WylogujSie2" Click="WylogujSie_Click" Grid.Column="2" Grid.Row="4" Height="40" Width="150" VerticalAlignment="Center" HorizontalAlignment="Right" Background="MediumOrchid" Margin="5,5,5,5" FontSize="15">
+                        Wyloguj się
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="20"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                </Grid>
+            </TabItem>
+            <TabItem Width="{Binding ElementName=c1, Path=ActualWidth}" Height="40" Header="Klienci ze zrealizowaną wizytą">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="2*"/>
+                        <RowDefinition Height="2*"/>
+                        <RowDefinition Height="0.2*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="0.1*"/>
+                        <ColumnDefinition Width="8*"/>
+                        <ColumnDefinition Width="0.1*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button Name="SzczegolyWizyty" Click="SzczegolyWizyty_Click" Grid.Column="0" Grid.Row="0" Background="MediumOrchid" Margin="5,5,5,5" FontSize="15">
+                        Wyświetl szczegóły wizyty
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="20"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                    <Button Name="UsunKlientaZrealizowanego"  Grid.Column="0" Grid.Row="1" Background="MediumOrchid" Margin="5,5,5,5" FontSize="15">
+                        Usuń
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="20"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                    <DataGrid IsReadOnly="True" AutoGenerateColumns="False" Name="KlienciZrealizowaniDataGrid" Grid.Row="0" Grid.Column="2" Grid.RowSpan="2">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Width="*" Header="Id wizyty" Binding="{Binding WizytaKonsultacyjnaId}"/>
+                            <DataGridTextColumn Width="*" Header="Id klienta" Binding="{Binding OsobaId}"/>
+                            <DataGridTextColumn Width="*" Header="Imie" Binding="{Binding imie}"/>
+                            <DataGridTextColumn Width="*" Header="Nazwisko" Binding="{Binding nazwisko}"/>
+                            <DataGridTextColumn Width="*" Header="Dane kontaktowe"  Binding="{Binding daneKontaktowe}"/>
+                            <DataGridTextColumn Width="*" Header="Data urodzenia" Binding="{Binding dataUrodzenia}"/>
+                            <DataGridTextColumn Width="*" Header="Płeć" Binding="{Binding plec}"/>
+                            <DataGridTextColumn Width="*" Header="Adres" Binding="{Binding adresZamieszkania}"/>
+                            <DataGridTextColumn Width="*" Header="Pierwszy zabieg" Binding="{Binding pierwszaOperacjaPlastyczna}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <Button Name="OdswierzKlientowZrealizowanych" Click="OdswierzKlientowZrealizowanych_Click" Grid.Column="2" Grid.Row="3" Height="40" Width="150" VerticalAlignment="Center" HorizontalAlignment="Right" Background="MediumOrchid" Margin="5,5,5,5" FontSize="15">
+                        Odświerz
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="20"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                    <Button Name="WylogujSie1" Click="WylogujSie_Click" Grid.Column="2" Grid.Row="4" Height="40" Width="150" VerticalAlignment="Center" HorizontalAlignment="Right" Background="MediumOrchid" Margin="5,5,5,5" FontSize="15">
+                        Wyloguj się
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="20"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
