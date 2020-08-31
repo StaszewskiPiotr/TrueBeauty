@@ -2,7 +2,7 @@
 
 Aplikacja WPF "TrueBeauty" jest projektem końcowym zaliczającym przedmiot MAS - Modelowanie i Analiza Systemów informacyjnych. Celem aplikacji było umożliwienie przeprowadzenia, krótkiego procesu biznesowego polegającego na zapisie klienta na zabieg.
 # Opis przebiegu
-•	Wstęp:
+-	Wstęp:
 Klient przychodzi do kliniki i zgłasza chęć odbycia zabiegu.
 •	Po stronie pracownika zwykłego:
 Pracownik sprawdza czy klient nie jest lekarzem. Jeśli nim jest, w formularzu dodającym klienta zaznacza się checkbox wyłączający wszystkie input'y(np. imie, nazwisko itd.), ale jednocześnie udostępniający ComboBox z listą wszystkich lekarzy(pobranych z bazy). Po wyborze lekarza zatwierdza się dodanie przyciskiem "Dodaj" i klient jest zapisywany w bazie. Jeśli jednak klient nie jest lekarzem, pracownik wypełnia wszystkie wymagane inputy i również zatwierdza dodanie wciskając przycisk "Dodaj". Pracownik zwykły ma również możliwość dodawania i usuwania lekarzy w zakładce "Lekarze".
